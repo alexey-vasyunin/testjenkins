@@ -1,9 +1,9 @@
 pipeline {
     agent any
-    parameters {[
-        choice(name: 'builderPlugin', choices: ['Maven', 'Gradle']),
+    parameters {
+        choice(name: 'builderPlugin', choices: ['Maven', 'Gradle'])
         string(name: 'args', defaultValue: '', description: 'Additional arguments for maven')
-    ]}
+    }
     stages {
         stage('Build') {
             steps {
